@@ -2,6 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background-color: brown;
+@layer utilities {
+  @variants responsive {
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+  }
+}
+
+@keyframes change {
+  0% {
+    background-image: url(./images/sunflower.jpg);
+  }
+
+  50% {
+    background-image: url(./images/nicenigga.jpg);
+  }
+
+  100% {
+    background-image: url(./images/background.jpg);
+  }
+}
+
+#bgGround {
+  animation-name: change;
+  animation-duration: 10s;
+  animation-delay: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+#nigKid {
+  background-image: url(./images/kidSTand.jpg);
+}
+
+/* #womenBg {
+  background-image: url(./images/GraphicTee.webp);
+} */
+
+@keyframes leftToRight {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(10%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+#card {
+  animation-name: leftToRight;
+  animation-timing-function: ease-in-out;
+  animation-duration: 2s;
+}
+
+#allproducts {
+  animation-name: leftToRight;
+  animation-timing-function: ease-in-out;
+  animation-duration: 2s;
 }
